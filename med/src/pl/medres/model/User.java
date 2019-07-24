@@ -7,6 +7,16 @@ public class User {
 	private String password;
 	
 	
+	public User() {
+		
+	}
+	
+	public User(User user) {
+		this.user_id = user_id;
+		this.email = email;
+		this.is_active = is_active;
+		this.password = password;
+	}
 	
 	public User(Long user_id, String email, boolean is_active, String password) {
 		this.user_id = user_id;
