@@ -6,6 +6,8 @@ import pl.medres.model.User;
 
 public class UserDAOImpl implements UserDAO{
 
+	private static final String CREATE_USER = 
+			"INSERT INTO user(username, email, password, is_active) VALUES(:username, :email, :password, :active);";
 	@Override
 	public User create(User newObject) {
 		// TODO Auto-generated method stub
