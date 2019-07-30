@@ -3,7 +3,7 @@ package pl.medres.model;
 
 public class Person {
 	private long person_id;
-	private String firstNameString;
+	private String firstName;
 	private String lastName;
 	private String sex;
 	private String mobilePhone;
@@ -19,14 +19,14 @@ public class Person {
 
 
 
-	public Person(long person_id, String firstNameString, String lastName, String sex, String mobilePhone, String email,
+	public Person(long person_id, String firstName, String lastName, String sex, String mobilePhone, String email,
 			User user_idUser) {
 		this.person_id = person_id;
-		this.firstNameString = firstNameString;
+		this.firstName = firstName;
 		this.lastName = lastName;
 		this.sex = sex;
-		this.mobilePhone = mobilePhone;
 		this.email = email;
+		this.mobilePhone = mobilePhone;
 		this.user_idUser = user_idUser;
 	}
 
@@ -47,15 +47,15 @@ public class Person {
 
 
 
-	public String getFirstNameString() {
-		return firstNameString;
+	public String getFirstName() {
+		return firstName;
 	}
 
 
 
 
-	public void setFirstNameString(String firstNameString) {
-		this.firstNameString = firstNameString;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 
@@ -135,7 +135,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Person [person_id=" + person_id + ", firstNameString=" + firstNameString + ", lastName=" + lastName
+		return "Person [person_id=" + person_id + ", firstName=" + firstName + ", lastName=" + lastName
 				+ ", sex=" + sex + ", mobilePhone=" + mobilePhone + ", email=" + email + ", user_idUser=" + user_idUser
 				+ "]";
 	}
@@ -148,7 +148,7 @@ public class Person {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((firstNameString == null) ? 0 : firstNameString.hashCode());
+		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((mobilePhone == null) ? 0 : mobilePhone.hashCode());
 		result = prime * result + (int) (person_id ^ (person_id >>> 32));
@@ -174,10 +174,10 @@ public class Person {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (firstNameString == null) {
-			if (other.firstNameString != null)
+		if (firstName == null) {
+			if (other.firstName != null)
 				return false;
-		} else if (!firstNameString.equals(other.firstNameString))
+		} else if (!firstName.equals(other.firstName))
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)

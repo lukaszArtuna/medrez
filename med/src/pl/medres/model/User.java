@@ -2,9 +2,10 @@ package pl.medres.model;
 
 public class User {
 	private Long user_id;
-	private String email;
-	private boolean is_active;
+	private String username;
 	private String password;
+	private boolean is_active;
+	
 	
 	
 	public User() {
@@ -13,14 +14,14 @@ public class User {
 	
 	public User(User user) {
 		this.user_id = user_id;
-		this.email = email;
+		this.username = username;
 		this.is_active = is_active;
 		this.password = password;
 	}
 	
-	public User(Long user_id, String email, boolean is_active, String password) {
+	public User(Long user_id, String username, boolean is_active, String password) {
 		this.user_id = user_id;
-		this.email = email;
+		this.username = username;
 		this.is_active = is_active;
 		this.password = password;
 	}
@@ -30,12 +31,7 @@ public class User {
 	public void setUser_id(Long user_id) {
 		this.user_id = user_id;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	
 	public boolean isIs_active() {
 		return is_active;
 	}
@@ -48,21 +44,26 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Override
-	public String toString() {
-		return "User [user_id=" + user_id + ", email=" + email + ", is_active=" + is_active + ", password=" + password
-				+ "]";
+
+	public String getUsername() {
+		return username;
 	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + (is_active ? 1231 : 1237);
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((user_id == null) ? 0 : user_id.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -72,11 +73,6 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
 		if (is_active != other.is_active)
 			return false;
 		if (password == null) {
@@ -89,8 +85,22 @@ public class User {
 				return false;
 		} else if (!user_id.equals(other.user_id))
 			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", username=" + username + ", password=" + password + ", is_active="
+				+ is_active + "]";
+	}
+
+
+
 	
 	
 	

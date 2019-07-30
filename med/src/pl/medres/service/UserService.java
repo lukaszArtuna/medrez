@@ -5,10 +5,10 @@ import pl.medres.model.User;
 import pl.medres.dao.UserDAO;
 
 public class UserService {
-	public void addUser(Long user_id, String email, String password) {
+	public void addUser(String username, String password) {
 		User user = new User();
-		user.setUser_id(user_id);
-		user.setEmail(email);
+		
+		user.setUsername(username);
 		user.setPassword(password);
 		user.setIs_active(true);
 		DAOFactory factory = DAOFactory.getDAOFactory();
